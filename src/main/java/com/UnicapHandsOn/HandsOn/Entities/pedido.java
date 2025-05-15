@@ -30,7 +30,7 @@ public class pedido implements Serializable{
 
     private Instant moment;
 
-    private Integer pedidoStatus;
+    private Integer Statuspedido;
 
     //@JsonIgnore
     @ManyToOne//Anotation que serve para mostrar que a variavel cliente é uma chave de fora e alem disso mostrar que a relação é de varios pedidos para 1
@@ -61,7 +61,7 @@ public class pedido implements Serializable{
         return moment;
     }
     public pedidoStatus getpedidoStatus() {
-        return pedidoStatus.valueOf(pedidoStatus);
+        return pedidoStatus.valueOf(Statuspedido);
     }
 
     public cliente getClient() {
@@ -83,7 +83,7 @@ public class pedido implements Serializable{
     }
     public void setpedidoStatus(pedidoStatus pedidoStatus) {
         if (pedidoStatus != null) {
-            this.pedidoStatus = pedidoStatus.getCode();
+            this.Statuspedido = pedidoStatus.getCode();
         }
     }
 

@@ -20,6 +20,7 @@ public enum pedidoStatus {
         return code;
     }
 
+    
     public static pedidoStatus valueOf(int code){
         for(pedidoStatus value: pedidoStatus.values()){
             if (value.getCode() == code) {

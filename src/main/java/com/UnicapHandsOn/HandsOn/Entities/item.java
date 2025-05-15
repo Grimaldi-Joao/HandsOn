@@ -34,9 +34,9 @@ public class item implements Serializable {
 
     //@Transient essa anotation faz com que o jpa não tente rodar oq vc queira
     @ManyToMany
-    @JoinTable(name = "tb_item_category", //nome da tabela de associação 
+    @JoinTable(name = "tb_item_categoria", //nome da tabela de associação 
     joinColumns = @JoinColumn(name = "item_id"),//define a chave estrangeira que está recebendo
-    inverseJoinColumns = @JoinColumn(name = "category_id"))// aqui vc está especificando a relação de muitos para muitos de item com category, e esse invertido define a chave estrangeira do outro lado da relação
+    inverseJoinColumns = @JoinColumn(name = "categoria_id"))// aqui vc está especificando a relação de muitos para muitos de item com categoria, e esse invertido define a chave estrangeira do outro lado da relação
     private Set<categoria> categories = new HashSet<>();
 
     @OneToMany(mappedBy = "id.item")
@@ -92,10 +92,6 @@ public class item implements Serializable {
     }
     public void setImgUrl(String imgUrl) {
         this.imgUrl = imgUrl;
-    }
-
-    public Set<categoria> getCategories() {
-        return categories;
     }
 
     public int hashCode(){
